@@ -9,7 +9,7 @@
 |Júlia Du Bois Araújo Silva|14584360|juliaduboisas@usp.br|
 |Laura|||
 |Pedro Lopo|||
-|Rafaela Elache|||
+|Rafaela Elache Maciel|13838666|rafaelaelache@usp.br|
 
 ## Enunciado
 
