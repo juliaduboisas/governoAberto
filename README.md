@@ -4,7 +4,7 @@
 |Integrante|NUSP|E-mail USP|
 |----------|----|----------|
 |Ana Clara Segal Vidal Pessanha|14677464|anaclarasvp@usp.br|
-|Artur Daichi G.Inazaki|14676716|artur.inazaki@usp.br|
+|Artur Daichi G. Inazaki|14676716|artur.inazaki@usp.br|
 |Gabriele Golfe|||
 |Júlia Du Bois Araújo Silva|14584360|juliaduboisas@usp.br|
 |Laura|||
