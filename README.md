@@ -5,9 +5,9 @@
 |----------|----|----------|
 |Ana Clara Segal Vidal Pessanha|14677464|anaclarasvp@usp.br|
 |Artur Daichi G. Inazaki|14676716|artur.inazaki@usp.br|
-|Gabriele Golfe|||
+|Gabriele Golfe|12524038|gabrielegolfe@usp.br|
 |Júlia Du Bois Araújo Silva|14584360|juliaduboisas@usp.br|
-|Laura|||
+|Laura Paiva de Siqueira|11207515||
 |Pedro Henrique Chaves Lopo|14835007|pedrohcl@usp.br|
 |Rafaela Elache Maciel|13838666|rafaelaelache@usp.br|
 
