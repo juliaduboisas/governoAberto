@@ -8,7 +8,7 @@
 |Gabriele Golfe|||
 |Júlia Du Bois Araújo Silva|14584360|juliaduboisas@usp.br|
 |Laura|||
-|Pedro Lopo|||
+|Pedro Henrique Chaves Lopo|14835007|pedrohcl@usp.br|
 |Rafaela Elache Maciel|13838666|rafaelaelache@usp.br|
 
 ## Enunciado
