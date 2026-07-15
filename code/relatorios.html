@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatórios | Observatório Educação Resiliente</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo"><img src="img/coop-clima-logo.png" /></div>
+        <div>
+          Observatório Educação Resiliente
+          <small>Justiça Climática e Acesso à Educação — São Vicente/SP</small>
+        </div>
+      </div>
+      <nav class="menu" role="navigation" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="relatorios.html" class="active">Relatórios</a>
+        <a id="nav-ocorrencia" href="ocorrencias.html" style="display:none;">Registrar Ocorrência</a>
+        <a id="nav-login" href="login.html">Login</a>
+        <a id="nav-logout" href="#" class="btn" style="display:none;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h1>Relatórios</h1>
+    <p class="subtitulo">
+      Gere e exporte relatórios consolidados de escolas, bairros, ocorrências e vulnerabilidade climática.
+    </p>
+
+    <!-- Tipos -->
+    <section aria-labelledby="tipos-rel">
+      <h2 id="tipos-rel">Tipos de relatório disponíveis</h2>
+      <div class="cards-grid">
+        <div class="card"><h3>🏛️ Municipal</h3><p>Visão consolidada de São Vicente/SP.</p></div>
+        <div class="card"><h3>🏫 Por Escola</h3><p>Detalhamento por unidade escolar.</p></div>
+        <div class="card"><h3>🏘️ Por Bairro</h3><p>Panorama por bairro/região.</p></div>
+      </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="secao" aria-labelledby="titulo-filtros">
+      <h2 id="titulo-filtros">🔎 Filtros</h2>
+      <div class="form-grid">
+        <div>
+          <label for="periodoInicio">Período inicial</label>
+          <input type="date" id="periodoInicio">
+        </div>
+        <div>
+          <label for="periodoFim">Período final</label>
+          <input type="date" id="periodoFim">
+        </div>
+        <div>
+          <label for="filtroEscola">Escola</label>
+          <select id="filtroEscola"><option value="">Todas</option></select>
+        </div>
+        <div>
+          <label for="filtroBairroRel">Bairro</label>
+          <select id="filtroBairroRel"><option value="">Todos</option></select>
+        </div>
+        <div>
+          <label for="filtroMotivo">Motivo</label>
+          <select id="filtroMotivo">
+            <option value="">Todos</option>
+            <option>Enchente</option>
+            <option>Deslizamento</option>
+            <option>Transporte interrompido</option>
+            <option>Falta de energia</option>
+            <option>Calor</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="btn-grupo">
+        <button id="btnGerar" class="btn">📊 Gerar relatório</button>
+        <button id="btnCsv" class="btn verde">⬇️ Exportar CSV</button>
+        <button id="btnPdf" class="btn secundario">🖨️ Exportar PDF</button>
+      </div>
+
+      <div id="mensagemRel" role="status" aria-live="polite"></div>
+    </section>
+
+
+  </main>
+
+  <footer role="contentinfo">
+    Observatório Educação Resiliente • Protótipo acadêmico • São Vicente/SP
+  </footer>
+
+  <script src="js/dados.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/relatorios.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatório Educação Resiliente | São Vicente</title>
+  <meta name="description" content="Monitoramento dos impactos climáticos sobre o acesso à educação em São Vicente.">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho / Menu -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo"><img src="img/coop-clima-logo.png" /></div>
+        <div>
+          Observatório Educação Resiliente
+          <small>Justiça Climática e Acesso à Educação — São Vicente/SP</small>
+        </div>
+      </div>
+      <nav class="menu" role="navigation" aria-label="Menu principal">
+        <a href="index.html" class="active">Início</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="relatorios.html">Relatórios</a>
+<a id="nav-ocorrencia" href="ocorrencias.html" style="display:none;">Registrar Ocorrência</a>
+<a id="nav-login" href="login.html">Login</a>
+<a id="nav-logout" href="#" style="display:none;" class="btn">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="titulo-principal">
+      <h1 id="titulo-principal">Observatório Educação Resiliente</h1>
+      <h4>Monitoramento dos impactos climáticos sobre o acesso à educação em São Vicente</h4>
+      <p>
+        Este observatório integra dados educacionais, territoriais, populacionais e climáticos
+        para apoiar a tomada de decisão pública, ampliar a transparência e permitir o
+        acompanhamento dos impactos de eventos climáticos na continuidade escolar.
+      </p>
+      <h4>Por que isso importa?</h4>
+      <p>
+        Eventos climáticos extremos podem impedir o funcionamento das escolas, dificultar
+        o deslocamento de estudantes e professores e ampliar desigualdades já existentes
+        no território. Ao reunir informações de escolas, população, áreas de inundação,
+        áreas de deslizamento e ocorrências reportadas pelas unidades escolares, o
+        observatório permite <strong>identificar prioridades</strong> e planejar respostas
+        mais <strong>justas e eficientes</strong>.
+      </p>
+    </section>
+
+    <!-- Cards de indicadores gerais -->
+    <section aria-labelledby="indicadores-gerais">
+      <h2 id="indicadores-gerais">Indicadores gerais</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="rotulo">Escolas monitoradas</div>
+          <div class="valor">124</div>
+          <div>Unidades escolares acompanhadas pelo observatório.</div>
+        </div>
+        <div class="card risco-alto">
+          <div class="rotulo">Escolas em área de risco</div>
+          <div class="valor">31</div>
+          <div>Próximas de áreas de inundação ou deslizamento.</div>
+        </div>
+        <div class="card risco-medio">
+          <div class="rotulo">Dias letivos perdidos</div>
+          <div class="valor">189</div>
+          <div>No ano corrente, por eventos climáticos.</div>
+        </div>
+        <div class="card">
+          <div class="rotulo">População potencialmente afetada</div>
+          <div class="valor">15.432</div>
+          <div>Estimativa nas regiões monitoradas.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    Observatório Educação Resiliente • Protótipo acadêmico • São Vicente/SP —
+    Módulo do futuro <em>Observatório de Justiça Climática</em>.
+  </footer>
+
+  <script src="js/dados.js"></script>
+<script src="js/auth.js"></script>
+</body>

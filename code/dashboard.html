@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Observatório Educação Resiliente</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo"><img src="img/coop-clima-logo.png" /></div>
+        <div>
+          Observatório Educação Resiliente
+          <small>Justiça Climática e Acesso à Educação — São Vicente/SP</small>
+        </div>
+      </div>
+      <nav class="menu" role="navigation" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="relatorios.html">Relatórios</a>
+        <a id="nav-ocorrencia" href="ocorrencias.html" style="display:none;">Registrar Ocorrência</a>
+        <a id="nav-login" href="login.html">Login</a>
+        <a id="nav-logout" href="#" class="btn" style="display:none;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h1>Dashboard de Indicadores</h1>
+    <p class="subtitulo">
+      Painel analítico para apoio à Secretaria da Educação — impactos climáticos, ocorrências e prioridades.
+    </p>
+
+    <!-- Indicadores no topo -->
+    <div class="cards-grid">
+      <div class="card"><div class="rotulo">Total de escolas monitoradas</div><div class="valor">124</div></div>
+      <div class="card"><div class="rotulo">Ocorrências registradas</div><div class="valor">76</div></div>
+      <div class="card risco-medio"><div class="rotulo">Dias letivos perdidos</div><div class="valor">189</div></div>
+      <div class="card"><div class="rotulo">Alunos afetados</div><div class="valor">15.432</div></div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="graficos-grid">
+
+      <div class="grafico-box">
+        <h3>Motivos de interrupção</h3>
+        <canvas id="graficoMotivos" role="img" aria-label="Gráfico de rosca com motivos de interrupção das aulas"></canvas>
+        <p class="grafico-desc">
+          Descrição: enchente é o motivo mais frequente (38 casos), seguido de alagamento no entorno (24),
+          transporte interrompido (18), deslizamento (12), falta de energia (9) e outros motivos (5).
+        </p>
+      </div>
+
+      <div class="grafico-box">
+        <h3>Dias letivos perdidos por mês</h3>
+        <canvas id="graficoDiasMes" role="img" aria-label="Gráfico de barras com dias letivos perdidos por mês"></canvas>
+        <p class="grafico-desc">
+          Descrição: o pico ocorre em março (41 dias) e abril (36 dias), coincidindo com o
+          período chuvoso na Baixada Santista. Valores mínimos em agosto (6) e dezembro (4).
+        </p>
+      </div>
+
+      <div class="grafico-box">
+        <h3>Alunos afetados por região</h3>
+        <canvas id="graficoPopulacaoRegiao" role="img" aria-label="Gráfico de barras com população escolar afetada por região"></canvas>
+        <p class="grafico-desc">
+          Descrição: Parque das Bandeiras concentra o maior número de estudantes potencialmente
+          afetados (4.100), seguido de Parque Bitaru (3.200) e Vila Margarida (2.800).
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer role="contentinfo">
+    Observatório Educação Resiliente • Protótipo acadêmico • São Vicente/SP
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

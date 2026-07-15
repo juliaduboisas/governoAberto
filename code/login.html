@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Observatório Educação Resiliente</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- Header / Menu -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo"><img src="img/coop-clima-logo.png" /></div>
+        <div>
+          Observatório Educação Resiliente
+          <small>Justiça Climática e Acesso à Educação — São Vicente/SP</small>
+        </div>
+      </div>
+      <nav class="menu" role="navigation" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="relatorios.html">Relatórios</a>
+        <a id="nav-ocorrencia" href="ocorrencias.html" style="display:none;">Registrar Ocorrência</a>
+        <a id="nav-login" href="login.html" class="active">Login</a>
+        <a id="nav-logout" href="#" class="btn" style="display:none;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <div class="form-card">
+      <h1 style="text-align:center; margin-bottom:8px;">Login Institucional</h1>
+      <p style="text-align:center; color:#666; margin-bottom:24px; font-size:0.95rem;">
+        Acesso exclusivo para instituições de ensino cadastradas.
+      </p>
+
+      <div id="loginSuccess" role="alert" class="mensagem sucesso" style="display:none;">
+        ✅ Login efetuado com sucesso! Redirecionando…
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-vertical">
+          <div>
+            <label for="email">E‑mail institucional <span class="obrigatorio">*</span></label>
+            <input type="email" id="email" placeholder="escola@exemplo.edu.br" required>
+          </div>
+          <div>
+            <label for="senha">Senha <span class="obrigatorio">*</span></label>
+            <input type="password" id="senha" placeholder="••••••••" required>
+          </div>
+          <div>
+            <button type="submit" id="btnEntrar" class="btn" style="width:100%; padding:12px;">Entrar</button>
+          </div>
+        </div>
+      </form>
+
+      <p style="text-align:center; margin-top:20px; color:#555; font-size:0.95rem;">
+        Ainda não tem cadastro?
+        <a href="cadastro.html" style="color:var(--cor-verde); font-weight:600;">Cadastre sua instituição</a>
+      </p>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    Observatório Educação Resiliente • Protótipo acadêmico • São Vicente/SP —
+    Módulo do futuro <em>Observatório de Justiça Climática</em>.
+  </footer>
+
+  <!-- auth.js must load first so isLoggedIn() is available synchronously -->
+  <script src="js/auth.js"></script>
+  <script>
+    // Guard: if already logged in, skip the login page entirely
+    if (isLoggedIn()) {
+      window.location.replace('ocorrencias.html?logged=1');
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('email').value.trim();
+      var senha = document.getElementById('senha').value.trim();
+
+      if (!email || !senha) return;
+
+      // Save session
+      login(email);
+
+      // Show feedback, hide form
+      document.getElementById('loginSuccess').style.display = 'block';
+      document.getElementById('loginForm').style.display    = 'none';
+
+      // Update nav to reflect logged-in state
+      updateNav();
+
+      // Redirect to protected page with state propagation for file://
+      setTimeout(function () {
+        window.location.replace('ocorrencias.html?logged=1');
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
