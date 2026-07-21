@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header / Menu -->
+
+
   <header class="header" role="banner">
     <div class="header-inner">
       <div class="brand">
@@ -28,9 +29,6 @@
     </div>
   </header>
 
-  <!-- auth.js loads first; requireLogin() runs immediately, before any page content is shown -->
-  <script src="js/auth.js"></script>
-  <script>requireLogin();</script>
 
   <main class="container" role="main">
     <h1>Registrar Ocorrência Escolar</h1>
@@ -39,21 +37,33 @@
       dias sem aula por motivos climáticos ou correlatos.
     </p>
 
+
+    <!-- Formulário -->
     <section class="secao" aria-labelledby="titulo-form">
       <h2 id="titulo-form">📝 Nova ocorrência</h2>
+
+
       <div id="mensagemForm" role="status" aria-live="polite"></div>
+
+
       <form id="formOcorrencia" novalidate>
         <div class="form-grid">
+
+
           <div>
             <label for="escola">Escola <span class="obrigatorio">*</span></label>
             <select name="escola" id="escola" required>
               <option value="">Selecione a escola…</option>
             </select>
           </div>
+
+
           <div>
             <label for="data">Data da ocorrência <span class="obrigatorio">*</span></label>
             <input type="date" name="data" id="data" required>
           </div>
+
+
           <div>
             <label for="interrompidas">As aulas foram interrompidas? <span class="obrigatorio">*</span></label>
             <select name="interrompidas" id="interrompidas" required>
@@ -63,10 +73,14 @@
               <option value="Não">Não</option>
             </select>
           </div>
+
+
           <div>
             <label for="diasPerdidos">Dias letivos perdidos <span class="obrigatorio">*</span></label>
             <input type="number" name="diasPerdidos" id="diasPerdidos" min="0" max="60" required>
           </div>
+
+
           <div>
             <label for="motivo">Motivo principal <span class="obrigatorio">*</span></label>
             <select name="motivo" id="motivo" required>
@@ -80,31 +94,60 @@
               <option>Outro</option>
             </select>
           </div>
+
+
+
+
           <div>
             <label for="anexo">Anexo (opcional)</label>
             <input type="file" name="anexo" id="anexo" accept="image/*,.pdf">
           </div>
+
+
         </div>
-        <div class="form-grid" style="margin-top:14px;">
-          <div>
-            <label for="descricao">Descrição da ocorrência</label>
-            <textarea name="descricao" id="descricao" rows="4"
-              placeholder="Descreva o que aconteceu, quais áreas foram afetadas e a duração da interrupção."></textarea>
-          </div>
+
+
+        <div>
+          <label for="descricao">Descrição da ocorrência</label>
+          <textarea name="descricao" id="descricao" rows="4"
+            placeholder="Descreva o que aconteceu, quais áreas da escola/entorno foram afetadas e a duração da interrupção."></textarea>
         </div>
-        <div class="btn-grupo" style="margin-top:12px;">
+
+
+        <div class="btn-grupo">
           <button type="submit" class="btn">✅ Registrar ocorrência</button>
           <button type="reset" class="btn secundario">Limpar formulário</button>
         </div>
       </form>
     </section>
+
+
+    <section class="secao" aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">📋 Ocorrências registradas (<span id="contagemOcorrencias">0</span>)</h2>
+      <table id="tabelaOcorrencias">
+        <thead>
+          <tr>
+            <th>Escola</th><th>Data</th><th>Dias perdidos</th><th>Motivo</th><th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="btn-grupo">
+        <button id="btnExportarCsv" class="btn verde">⬇️ Baixar CSV atualizado</button>
+        <button id="btnLimparStorage" class="btn secundario">Limpar sessão</button>
+      </div>
+    </section>
   </main>
+
 
   <footer role="contentinfo">
     Observatório Educação Resiliente • Protótipo acadêmico • São Vicente/SP
   </footer>
 
+
   <script src="js/dados.js"></script>
+  <script src="js/auth.js"></script>
+  <script>requireLogin();</script>
   <script src="js/ocorrencias.js"></script>
 </body>
 </html>

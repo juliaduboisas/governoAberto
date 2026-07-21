@@ -75,6 +75,16 @@
             <option>Calor</option>
           </select>
         </div>
+        <div>
+          <label for="filtroNivel">Nível de vulnerabilidade (IVEC)</label>
+          <select id="filtroNivel">
+            <option value="">Todos</option>
+            <option>Baixo</option>
+            <option>Médio</option>
+            <option>Alto</option>
+            <option>Muito Alto</option>
+          </select>
+        </div>
       </div>
 
       <div class="btn-grupo">
@@ -86,6 +96,45 @@
       <div id="mensagemRel" role="status" aria-live="polite"></div>
     </section>
 
+    <!-- Resumo por escola -->
+    <section class="secao" aria-labelledby="titulo-resumo">
+      <h2 id="titulo-resumo">📊 Resumo por escola (<span id="contagemLinhas">0</span>)</h2>
+      <div class="tabela-wrap">
+        <table id="tabelaResumo">
+          <thead>
+            <tr>
+              <th>Escola</th>
+              <th>Bairro</th>
+              <th>Ocorrências</th>
+              <th>Dias perdidos</th>
+              <th>Risco inundação</th>
+              <th>Risco deslizamento</th>
+              <th>Alunos</th>
+              <th>IVEC</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Ocorrências registradas de fato (formulário) -->
+    <section class="secao" aria-labelledby="titulo-ocorr-rel">
+      <h2 id="titulo-ocorr-rel">📋 Ocorrências registradas (<span id="contagemOcorrRel">0</span>)</h2>
+      <div class="btn-grupo">
+        <button id="btnCsvOcorrencias" class="btn verde">⬇️ Exportar ocorrências (CSV)</button>
+      </div>
+      <div class="tabela-wrap">
+        <table id="tabelaOcorrenciasRel">
+          <thead>
+            <tr>
+              <th>Escola</th><th>Data</th><th>Dias perdidos</th><th>Motivo</th><th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
 
   </main>
 
